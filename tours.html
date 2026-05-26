@@ -27,9 +27,39 @@
           <img src="assets/logo_transparent.png" alt="iTour Punta Cana" class="logo-img">
         </a>
         <ul class="nav-links" id="navLinks">
-          <li><a href="tours.html" class="active">Tours</a></li>
-          <li><a href="index.html#about">About Us</a></li>
-          <li><a href="tours.html" class="btn btn-primary">Book Now</a></li>
+          <li><a href="tours.html" class="active" data-i18n="nav.tours">Tours</a></li>
+          <li><a href="index.html#about" data-i18n="nav.aboutUs">About Us</a></li>
+
+          <!-- Language Toggle -->
+          <li>
+            <div class="lang-toggle-wrapper" id="lang-toggle-wrapper">
+              <button class="lang-toggle" id="lang-toggle" aria-label="Change language" aria-expanded="false" aria-haspopup="listbox">
+                <span class="lang-flag">🇺🇸</span>
+                <span class="lang-label">EN</span>
+                <svg class="lang-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="lang-dropdown" role="listbox" aria-label="Select language">
+                <button class="lang-option active" data-lang="en" role="option" aria-selected="true">
+                  <span class="lang-option-flag">🇺🇸</span>
+                  <span class="lang-option-name">English</span>
+                  <svg class="lang-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M2 7L5.5 10.5L12 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="lang-option" data-lang="es" role="option" aria-selected="false">
+                  <span class="lang-option-flag">🇩🇴</span>
+                  <span class="lang-option-name">Español</span>
+                  <svg class="lang-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M2 7L5.5 10.5L12 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="tours.html" class="btn btn-primary" data-i18n="nav.bookNow">Book Now</a></li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -45,12 +75,12 @@
     <section class="page-header" aria-label="Page header">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
+          <a href="index.html" data-i18n="toursHeader.breadcrumbHome">Home</a>
           <span aria-hidden="true">›</span>
-          <span class="breadcrumb-current" aria-current="page">All Tours</span>
+          <span class="breadcrumb-current" aria-current="page" data-i18n="toursHeader.breadcrumbCurrent">All Tours</span>
         </nav>
-        <h1 class="page-title">Caribbean Adventures</h1>
-        <p class="page-subtitle">Discover hand-picked excursions from local experts. From turquoise waters to hidden jungles, your paradise awaits.</p>
+        <h1 class="page-title" data-i18n="toursHeader.pageTitle">Caribbean Adventures</h1>
+        <p class="page-subtitle" data-i18n="toursHeader.pageSubtitle">Discover hand-picked excursions from local experts. From turquoise waters to hidden jungles, your paradise awaits.</p>
       </div>
     </section>
 
@@ -63,13 +93,13 @@
         <!-- SIDEBAR FILTERS -->
         <aside class="filters-sidebar" aria-label="Tour filters">
           <div class="filters-header">
-            <h2 class="filters-title">Filters</h2>
-            <button class="filters-clear" id="clearFilters">Clear All</button>
+            <h2 class="filters-title" data-i18n="filters.title">Filters</h2>
+            <button class="filters-clear" id="clearFilters" data-i18n="filters.clearAll">Clear All</button>
           </div>
 
           <!-- Mobile filter toggle -->
           <button class="filters-toggle" id="filtersToggle" aria-expanded="false" aria-controls="filtersBody">
-            Show Filters
+            <span data-i18n="filters.showFilters">Show Filters</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <path d="M6 9l6 6 6-6"/>
             </svg>
@@ -78,34 +108,34 @@
           <div class="filters-body" id="filtersBody">
             <!-- Category Filter -->
             <div class="filter-group">
-              <h3 class="filter-group-title">Category</h3>
+              <h3 class="filter-group-title" data-i18n="filters.categoryLabel">Category</h3>
               <ul class="filter-checkboxes">
                 <li>
                   <label class="filter-checkbox-label">
                     <input type="checkbox" value="water-sports" class="category-filter">
                     <span class="checkmark"></span>
-                    Water Sports
+                    <span data-i18n="filters.cat1">Water Sports</span>
                   </label>
                 </li>
                 <li>
                   <label class="filter-checkbox-label">
                     <input type="checkbox" value="private-charters" class="category-filter">
                     <span class="checkmark"></span>
-                    Private Charters
+                    <span data-i18n="filters.cat2">Private Charters</span>
                   </label>
                 </li>
                 <li>
                   <label class="filter-checkbox-label">
                     <input type="checkbox" value="cultural-tours" class="category-filter">
                     <span class="checkmark"></span>
-                    Cultural Tours
+                    <span data-i18n="filters.cat3">Cultural Tours</span>
                   </label>
                 </li>
                 <li>
                   <label class="filter-checkbox-label">
                     <input type="checkbox" value="nature-wildlife" class="category-filter">
                     <span class="checkmark"></span>
-                    Nature & Wildlife
+                    <span data-i18n="filters.cat4">Nature &amp; Wildlife</span>
                   </label>
                 </li>
               </ul>
@@ -113,7 +143,7 @@
 
             <!-- Price Filter -->
             <div class="filter-group">
-              <h3 class="filter-group-title">Max Price</h3>
+              <h3 class="filter-group-title" data-i18n="filters.priceLabel">Max Price</h3>
               <div class="price-range-wrap">
                 <input type="range" id="priceRange" min="50" max="250" value="250" step="5"
                        aria-label="Maximum price filter">
@@ -126,16 +156,16 @@
 
             <!-- Duration Filter -->
             <div class="filter-group">
-              <h3 class="filter-group-title">Duration</h3>
+              <h3 class="filter-group-title" data-i18n="filters.durationLabel">Duration</h3>
               <div class="duration-btns">
-                <button class="duration-btn" data-duration="half-day">Half Day</button>
-                <button class="duration-btn" data-duration="full-day">Full Day</button>
-                <button class="duration-btn" data-duration="multi-day">Multi-Day</button>
-                <button class="duration-btn" data-duration="night-tour">Night Tour</button>
+                <button class="duration-btn" data-duration="half-day" data-i18n="filters.dur1">Half Day</button>
+                <button class="duration-btn" data-duration="full-day" data-i18n="filters.dur2">Full Day</button>
+                <button class="duration-btn" data-duration="multi-day" data-i18n="filters.dur3">Multi-Day</button>
+                <button class="duration-btn" data-duration="night-tour" data-i18n="filters.dur4">Night Tour</button>
               </div>
             </div>
 
-            <button class="btn btn-primary" id="applyFiltersBtn" style="width:100%; justify-content:center; margin-top: 8px;">
+            <button class="btn btn-primary" id="applyFiltersBtn" style="width:100%; justify-content:center; margin-top: 8px;" data-i18n="filters.applyBtn">
               Apply Filters
             </button>
           </div>
@@ -147,12 +177,12 @@
           <div class="tours-toolbar">
             <p class="results-count" id="resultsCount">Showing <strong>8</strong> tours</p>
             <div class="sort-wrap">
-              <label for="sortSelect" class="sort-label">Sort by:</label>
+              <label for="sortSelect" class="sort-label" data-i18n="toursGrid.sortLabel">Sort by:</label>
               <select id="sortSelect" class="sort-select">
-                <option value="popular">Most Popular</option>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-                <option value="rating">Top Rated</option>
+                <option value="popular" data-i18n="toursGrid.sortPopular">Most Popular</option>
+                <option value="price-asc" data-i18n="toursGrid.sortPriceLow">Price: Low to High</option>
+                <option value="price-desc" data-i18n="toursGrid.sortPriceHigh">Price: High to Low</option>
+                <option value="rating" data-i18n="toursGrid.sortRating">Top Rated</option>
               </select>
             </div>
           </div>
@@ -194,7 +224,7 @@
             </svg>
             <span>iTour Punta Cana</span>
           </a>
-          <p>Your local guide to the best tours, excursions, and adventures in Punta Cana, Dominican Republic.</p>
+          <p data-i18n="footer.tagline">Your local guide to the best tours, excursions, and adventures in Punta Cana, Dominican Republic.</p>
           <div class="social-icons" style="margin-top: 20px;">
             <a href="#" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -220,21 +250,21 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>Discover</h4>
-          <a href="tours.html">Tours</a>
-          <a href="index.html#about">About Us</a>
-          <a href="tours.html">Sitemap</a>
+          <h4 data-i18n="footer.discoverTitle">Discover</h4>
+          <a href="tours.html" data-i18n="footer.link_tours">Tours</a>
+          <a href="index.html#about" data-i18n="footer.link_about">About Us</a>
+          <a href="tours.html" data-i18n="footer.link_sitemap">Sitemap</a>
         </div>
         <div class="footer-col">
-          <h4>Support</h4>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Contact Us</a>
+          <h4 data-i18n="footer.supportTitle">Support</h4>
+          <a href="#" data-i18n="footer.link_privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer.link_terms">Terms of Service</a>
+          <a href="#" data-i18n="footer.link_contact">Contact Us</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 iTour Punta Cana. All rights reserved.</p>
-        <p>Made with ♥ in Punta Cana, Dominican Republic</p>
+        <p data-i18n="footer.copyright">© 2025 iTour Punta Cana. All rights reserved.</p>
+        <p data-i18n="footer.madeWith">Made with ♥ in Punta Cana, Dominican Republic</p>
       </div>
     </div>
   </footer>
@@ -258,6 +288,7 @@
         <h2 class="modal-name" id="modalName"></h2>
         <div class="modal-rating" id="modalRating"></div>
         <p class="modal-desc" id="modalDesc"></p>
+        <h4 id="modalHighlightsLabel" style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-primary-container);margin-bottom:8px;">Highlights</h4>
         <ul class="highlights-list" id="modalHighlights"></ul>
         <div class="modal-footer">
           <div class="modal-price" id="modalPrice"></div>
@@ -267,6 +298,7 @@
     </div>
   </div>
 
+  <script src="scripts/i18n.js"></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/tourspage.js"></script>
 </body>

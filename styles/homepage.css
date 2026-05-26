@@ -30,7 +30,11 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-
+  background: linear-gradient(
+    160deg,
+    rgba(0, 0, 0, 0.38) 0%,
+    rgba(171, 53, 0, 0.22) 100%
+  );
   pointer-events: none;
 }
 
@@ -169,7 +173,7 @@
 }
 
 .category-card {
-  background: #fff;
+  background: #fff7f7;
   border-radius: var(--radius-lg);
   padding: var(--space-lg) var(--space-md);
   text-align: center;
