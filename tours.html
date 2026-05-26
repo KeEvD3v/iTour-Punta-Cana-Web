@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all tours and excursions in Punta Cana — catamarans, buggies, snorkeling, cultural tours and more. Book directly with local experts.">
+  <title>All Tours — iTour Punta Cana</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/tourspage.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="logo">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff6b35"/>
+                <stop offset="100%" stop-color="#fe4a49"/>
+              </linearGradient>
+            </defs>
+            <path d="M18 2C12.477 2 8 6.477 8 12c0 7.5 10 22 10 22s10-14.5 10-22c0-5.523-4.477-10-10-10z"
+                  stroke="url(#logoGrad)" stroke-width="2.2" fill="none"/>
+            <circle cx="18" cy="12" r="3.5" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+            <path d="M21 16 Q26 11 24 7 Q20 12 18 15" stroke="url(#logoGrad)" stroke-width="1.8"
+                  fill="none" stroke-linecap="round"/>
+          </svg>
+          <span>iTour Punta Cana</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="tours.html" class="active">Tours</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="tours.html" class="btn btn-primary">Book Now</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============================================================
+         PAGE HEADER
+         ============================================================ -->
+    <section class="page-header" aria-label="Page header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">›</span>
+          <span class="breadcrumb-current" aria-current="page">All Tours</span>
+        </nav>
+        <h1 class="page-title">Caribbean Adventures</h1>
+        <p class="page-subtitle">Discover hand-picked excursions from local experts. From turquoise waters to hidden jungles, your paradise awaits.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MAIN LAYOUT — Filters + Tours Grid
+         ============================================================ -->
+    <div class="container">
+      <div class="tours-layout">
+
+        <!-- SIDEBAR FILTERS -->
+        <aside class="filters-sidebar" aria-label="Tour filters">
+          <div class="filters-header">
+            <h2 class="filters-title">Filters</h2>
+            <button class="filters-clear" id="clearFilters">Clear All</button>
+          </div>
+
+          <!-- Mobile filter toggle -->
+          <button class="filters-toggle" id="filtersToggle" aria-expanded="false" aria-controls="filtersBody">
+            Show Filters
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+
+          <div class="filters-body" id="filtersBody">
+            <!-- Category Filter -->
+            <div class="filter-group">
+              <h3 class="filter-group-title">Category</h3>
+              <ul class="filter-checkboxes">
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" value="water-sports" class="category-filter">
+                    <span class="checkmark"></span>
+                    Water Sports
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" value="private-charters" class="category-filter">
+                    <span class="checkmark"></span>
+                    Private Charters
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" value="cultural-tours" class="category-filter">
+                    <span class="checkmark"></span>
+                    Cultural Tours
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" value="nature-wildlife" class="category-filter">
+                    <span class="checkmark"></span>
+                    Nature & Wildlife
+                  </label>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Price Filter -->
+            <div class="filter-group">
+              <h3 class="filter-group-title">Max Price</h3>
+              <div class="price-range-wrap">
+                <input type="range" id="priceRange" min="50" max="250" value="250" step="5"
+                       aria-label="Maximum price filter">
+                <div class="price-range-labels">
+                  <span>$50</span>
+                  <span id="priceRangeValue">$250</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Duration Filter -->
+            <div class="filter-group">
+              <h3 class="filter-group-title">Duration</h3>
+              <div class="duration-btns">
+                <button class="duration-btn" data-duration="half-day">Half Day</button>
+                <button class="duration-btn" data-duration="full-day">Full Day</button>
+                <button class="duration-btn" data-duration="multi-day">Multi-Day</button>
+                <button class="duration-btn" data-duration="night-tour">Night Tour</button>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" id="applyFiltersBtn" style="width:100%; justify-content:center; margin-top: 8px;">
+              Apply Filters
+            </button>
+          </div>
+        </aside>
+
+        <!-- TOURS CONTENT -->
+        <section aria-label="Tours listing">
+          <!-- Toolbar -->
+          <div class="tours-toolbar">
+            <p class="results-count" id="resultsCount">Showing <strong>8</strong> tours</p>
+            <div class="sort-wrap">
+              <label for="sortSelect" class="sort-label">Sort by:</label>
+              <select id="sortSelect" class="sort-select">
+                <option value="popular">Most Popular</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Top Rated</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Tours Grid -->
+          <div class="tours-grid" id="toursGrid" aria-label="Tours">
+            <!-- Rendered by tourspage.js -->
+          </div>
+
+          <!-- Pagination -->
+          <nav class="pagination" id="pagination" aria-label="Tours pagination">
+            <!-- Rendered by tourspage.js -->
+          </nav>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="logoGradFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ff6b35"/>
+                  <stop offset="100%" stop-color="#fe4a49"/>
+                </linearGradient>
+              </defs>
+              <path d="M18 2C12.477 2 8 6.477 8 12c0 7.5 10 22 10 22s10-14.5 10-22c0-5.523-4.477-10-10-10z"
+                    stroke="url(#logoGradFooter)" stroke-width="2.2" fill="none"/>
+              <circle cx="18" cy="12" r="3.5" stroke="url(#logoGradFooter)" stroke-width="2" fill="none"/>
+              <path d="M21 16 Q26 11 24 7 Q20 12 18 15" stroke="url(#logoGradFooter)" stroke-width="1.8"
+                    fill="none" stroke-linecap="round"/>
+            </svg>
+            <span>iTour Punta Cana</span>
+          </a>
+          <p>Your local guide to the best tours, excursions, and adventures in Punta Cana, Dominican Republic.</p>
+          <div class="social-icons" style="margin-top: 20px;">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.02-8.01a8.16 8.16 0 0 0 4.78 1.52V5.38a4.85 4.85 0 0 1-1-.69z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Discover</h4>
+          <a href="tours.html">Tours</a>
+          <a href="index.html#about">About Us</a>
+          <a href="tours.html">Sitemap</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 iTour Punta Cana. All rights reserved.</p>
+        <p>Made with ♥ in Punta Cana, Dominican Republic</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       QUICK VIEW MODAL
+       ============================================================ -->
+  <div class="modal-overlay" id="quickViewModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+    <div class="modal-card">
+      <button class="modal-close" id="closeModal" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+      <div class="modal-image-wrap">
+        <img class="modal-image" id="modalImage" src="" alt="">
+        <div class="modal-badge-wrap" id="modalBadgeWrap"></div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta" id="modalMeta"></div>
+        <h2 class="modal-name" id="modalName"></h2>
+        <div class="modal-rating" id="modalRating"></div>
+        <p class="modal-desc" id="modalDesc"></p>
+        <ul class="highlights-list" id="modalHighlights"></ul>
+        <div class="modal-footer">
+          <div class="modal-price" id="modalPrice"></div>
+          <button class="btn btn-primary" id="modalBook">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/tourspage.js"></script>
+</body>
+</html>

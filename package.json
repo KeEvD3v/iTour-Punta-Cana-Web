@@ -1,0 +1,11 @@
+{
+  "name": "itour-punta-cana",
+  "version": "1.0.0",
+  "description": "iTour Punta Cana - Tourism website for tours and activities in Punta Cana",
+  "scripts": {
+    "start": "live-server --port=3000"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

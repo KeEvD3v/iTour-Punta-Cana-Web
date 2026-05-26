@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="iTour Punta Cana — Book the best tours, catamarans, buggies, and safaris in Punta Cana. Hand-picked excursions from local experts.">
+  <title>iTour Punta Cana — Caribbean Adventures</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/homepage.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="logo">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff6b35"/>
+                <stop offset="100%" stop-color="#fe4a49"/>
+              </linearGradient>
+            </defs>
+            <path d="M18 2C12.477 2 8 6.477 8 12c0 7.5 10 22 10 22s10-14.5 10-22c0-5.523-4.477-10-10-10z"
+                  stroke="url(#logoGrad)" stroke-width="2.2" fill="none"/>
+            <circle cx="18" cy="12" r="3.5" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+            <path d="M21 16 Q26 11 24 7 Q20 12 18 15" stroke="url(#logoGrad)" stroke-width="1.8"
+                  fill="none" stroke-linecap="round"/>
+          </svg>
+          <span>iTour Punta Cana</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="tours.html">Tours</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="tours.html" class="btn btn-primary">Book Now</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-logo-card">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff6b35"/>
+                <stop offset="100%" stop-color="#fe4a49"/>
+              </linearGradient>
+            </defs>
+            <path d="M18 2C12.477 2 8 6.477 8 12c0 7.5 10 22 10 22s10-14.5 10-22c0-5.523-4.477-10-10-10z"
+                  stroke="url(#logoGrad2)" stroke-width="2.2" fill="none"/>
+            <circle cx="18" cy="12" r="3.5" stroke="url(#logoGrad2)" stroke-width="2" fill="none"/>
+            <path d="M21 16 Q26 11 24 7 Q20 12 18 15" stroke="url(#logoGrad2)" stroke-width="1.8"
+                  fill="none" stroke-linecap="round"/>
+          </svg>
+          <span>iTour Punta Cana</span>
+        </div>
+
+        <h1 class="hero-headline">Adventure Awaits<br>in Paradise</h1>
+        <p class="hero-subtitle">Discover hand-picked tours and excursions from local experts in the Dominican Republic.</p>
+
+        <form class="hero-search" id="heroSearch" role="search">
+          <div class="hero-search-field">
+            <label for="searchInput" class="sr-only">Search tours</label>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input type="text" id="searchInput" placeholder="Search tours…" autocomplete="off">
+          </div>
+          <div class="hero-search-divider" aria-hidden="true"></div>
+          <div class="hero-search-field">
+            <label for="dateInput" class="sr-only">Select date</label>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+            </svg>
+            <input type="date" id="dateInput">
+          </div>
+          <div class="hero-search-divider" aria-hidden="true"></div>
+          <div class="hero-search-field">
+            <label for="guestsInput" class="sr-only">Number of guests</label>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <select id="guestsInput">
+              <option value="">Guests</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5+">5+ Guests</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary hero-search-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            Search
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CATEGORIES SECTION
+         ============================================================ -->
+    <section class="categories-section" aria-label="Tour categories">
+      <div class="container">
+        <div class="categories-header">
+          <p class="section-label">Explore by type</p>
+          <h2 class="section-title">Find Your Adventure</h2>
+        </div>
+        <div class="categories-grid">
+          <article class="category-card">
+            <div class="category-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 17l3-8 3 3 3-6 3 4 3-2v8H3z"/>
+                <path d="M3 17c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2"/>
+                <path d="M8 9c0-1.1.9-2 2-2s2 .9 2 2"/>
+              </svg>
+            </div>
+            <h3>Catamarans</h3>
+            <p>Navega las aguas turquesas con estilo y lujo.</p>
+            <a href="tours.html?category=water-sports" class="category-link">
+              Explore
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </article>
+          <article class="category-card">
+            <div class="category-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/>
+                <path d="M5 17H3v-4l2-5h8l4 4h3l1 4v1h-2"/>
+                <path d="M9 17h6"/>
+              </svg>
+            </div>
+            <h3>Buggies</h3>
+            <p>Aventuras off-road por paisajes tropicales.</p>
+            <a href="tours.html?category=nature-wildlife" class="category-link">
+              Explore
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </article>
+          <article class="category-card">
+            <div class="category-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="8" r="5"/>
+                <path d="M12 13v8M8 17l4 4 4-4"/>
+                <path d="M7 8H2M22 8h-5"/>
+              </svg>
+            </div>
+            <h3>Safaris</h3>
+            <p>Descubre la cultura local y joyas naturales escondidas.</p>
+            <a href="tours.html?category=cultural-tours" class="category-link">
+              Explore
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURED TOURS SECTION
+         ============================================================ -->
+    <section class="featured-section" aria-label="Featured tours">
+      <div class="container">
+        <div class="featured-header">
+          <div>
+            <p class="section-label">Handpicked for you</p>
+            <h2 class="section-title">Top Rated Tours</h2>
+          </div>
+          <a href="tours.html" class="featured-view-all">
+            View All Tours
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+        <div class="tours-grid-home" id="featuredTours" aria-label="Featured tours list">
+          <!-- Rendered by homepage.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHY CHOOSE US
+         ============================================================ -->
+    <section class="why-section" id="about" aria-label="Why choose iTour Punta Cana">
+      <div class="container">
+        <div class="why-grid">
+          <div class="why-text">
+            <p class="section-label">Why choose us</p>
+            <h2 class="section-title">Local Experts, World-Class Experience</h2>
+            <p class="why-intro">We are a team of passionate locals who know every corner of Punta Cana. Our goal is to give you authentic, safe, and unforgettable experiences.</p>
+            <ul class="why-features">
+              <li class="why-feature">
+                <div class="why-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Experiencia Local</h3>
+                  <p>Guías que conocen los secretos de Punta Cana y te llevan a lugares que los turistas no ven.</p>
+                </div>
+              </li>
+              <li class="why-feature">
+                <div class="why-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Seguridad Primero</h3>
+                  <p>Estándares máximos de seguridad en todos los tours, con equipo certificado y guías entrenados.</p>
+                </div>
+              </li>
+              <li class="why-feature">
+                <div class="why-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Mejor Precio Garantizado</h3>
+                  <p>Precios locales competitivos, sin cargos ocultos. Si encuentras más barato, te igualamos.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="why-images" aria-hidden="true">
+            <div class="why-img-stack">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
+                   alt="Beautiful beach in Punta Cana" class="why-img why-img--back" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80"
+                   alt="Local food and dining experience" class="why-img why-img--front" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA / NEWSLETTER SECTION
+         ============================================================ -->
+    <section class="cta-section" aria-label="Newsletter signup">
+      <div class="container">
+        <div class="cta-content">
+          <p class="section-label" style="color:rgba(255,255,255,0.7)">Stay in the loop</p>
+          <h2 class="cta-title">Get Exclusive Deals & Travel Tips</h2>
+          <p class="cta-subtitle">Join 5,000+ travelers who receive early access to new tours, seasonal discounts, and insider Punta Cana guides.</p>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <div class="newsletter-input-wrap">
+              <label for="emailInput" class="sr-only">Your email address</label>
+              <input type="email" id="emailInput" placeholder="your@email.com" required autocomplete="email">
+              <button type="submit" class="btn btn-white">Subscribe Free</button>
+            </div>
+            <p class="newsletter-privacy">No spam, ever. Unsubscribe in one click.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="logoGradFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ff6b35"/>
+                  <stop offset="100%" stop-color="#fe4a49"/>
+                </linearGradient>
+              </defs>
+              <path d="M18 2C12.477 2 8 6.477 8 12c0 7.5 10 22 10 22s10-14.5 10-22c0-5.523-4.477-10-10-10z"
+                    stroke="url(#logoGradFooter)" stroke-width="2.2" fill="none"/>
+              <circle cx="18" cy="12" r="3.5" stroke="url(#logoGradFooter)" stroke-width="2" fill="none"/>
+              <path d="M21 16 Q26 11 24 7 Q20 12 18 15" stroke="url(#logoGradFooter)" stroke-width="1.8"
+                    fill="none" stroke-linecap="round"/>
+            </svg>
+            <span>iTour Punta Cana</span>
+          </a>
+          <p>Your local guide to the best tours, excursions, and adventures in Punta Cana, Dominican Republic.</p>
+          <div class="social-icons" style="margin-top: 20px;">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.02-8.01a8.16 8.16 0 0 0 4.78 1.52V5.38a4.85 4.85 0 0 1-1-.69z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Discover</h4>
+          <a href="tours.html">Tours</a>
+          <a href="#about">About Us</a>
+          <a href="tours.html">Sitemap</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 iTour Punta Cana. All rights reserved.</p>
+        <p>Made with ♥ in Punta Cana, Dominican Republic</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/homepage.js"></script>
+</body>
+</html>
