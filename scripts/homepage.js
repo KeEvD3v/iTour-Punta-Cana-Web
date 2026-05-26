@@ -40,7 +40,7 @@ function renderFeaturedTours() {
               <s>$${base.originalPrice}</s>
               <strong>${from} $${base.price}</strong>
             </div>
-            <a href="tours.html" class="btn btn-ghost btn-sm">${details}</a>
+            <a href="tour-detail.html?id=${tour.id}" class="btn btn-ghost btn-sm">${details}</a>
           </div>
         </div>
       </article>
