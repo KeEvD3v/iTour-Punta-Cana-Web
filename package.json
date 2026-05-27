@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "iTour Punta Cana - Tourism website for tours and activities in Punta Cana",
   "scripts": {
-    "start": "live-server --port=3000"
+    "start": "browser-sync start --server --port=3000 --files='**/*.html, styles/**/*.css, scripts/**/*.js' --no-notify"
   },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "browser-sync": "^3.0.4"
   }
 }
