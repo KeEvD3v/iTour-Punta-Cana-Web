@@ -1,325 +1,486 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tour details and booking — iTour Punta Cana">
-  <title>Tour Detail — iTour Punta Cana</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tour details and booking — iTour Punta Cana"
+    />
+    <title>Tour Detail — iTour Punta Cana</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="styles/tokens.css">
-  <link rel="stylesheet" href="styles/global.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/tourdetail.css">
-</head>
-<body>
-
-  <!-- ============================================================
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/tourdetail.css" />
+  </head>
+  <body>
+    <!-- ============================================================
        NAVBAR
        ============================================================ -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <div class="navbar-inner">
-        <a href="index.html" class="logo">
-          <img src="assets/logo_transparent.png" alt="iTour Punta Cana" class="logo-img">
-        </a>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="tours.html" data-i18n="nav.tours">Tours</a></li>
-          <li><a href="index.html#about" data-i18n="nav.aboutUs">About Us</a></li>
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="navbar-inner">
+          <a href="index.html" class="logo">
+            <img
+              src="assets/logo_transparent.png"
+              alt="iTour Punta Cana"
+              class="logo-img"
+            />
+          </a>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="tours.html" data-i18n="nav.tours">Tours</a></li>
+            <li>
+              <a href="index.html#about" data-i18n="nav.aboutUs">About Us</a>
+            </li>
 
-          <!-- Language Toggle -->
-          <li>
-            <div class="lang-toggle-wrapper" id="lang-toggle-wrapper">
-              <button class="lang-toggle" id="lang-toggle" aria-label="Change language" aria-expanded="false" aria-haspopup="listbox">
-                <span class="lang-flag">🇺🇸</span>
-                <span class="lang-label">EN</span>
-                <svg class="lang-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <div class="lang-dropdown" role="listbox" aria-label="Select language">
-                <button class="lang-option active" data-lang="en" role="option" aria-selected="true">
-                  <span class="lang-option-flag">🇺🇸</span>
-                  <span class="lang-option-name">English</span>
-                  <svg class="lang-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path d="M2 7L5.5 10.5L12 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Language Toggle -->
+            <li>
+              <div class="lang-toggle-wrapper" id="lang-toggle-wrapper">
+                <button
+                  class="lang-toggle"
+                  id="lang-toggle"
+                  aria-label="Change language"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                >
+                  <span class="lang-flag">🇺🇸</span>
+                  <span class="lang-label">EN</span>
+                  <svg
+                    class="lang-chevron"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 4L6 8L10 4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </button>
-                <button class="lang-option" data-lang="es" role="option" aria-selected="false">
-                  <span class="lang-option-flag">🇩🇴</span>
-                  <span class="lang-option-name">Español</span>
-                  <svg class="lang-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path d="M2 7L5.5 10.5L12 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </li>
-
-          <li><a href="tours.html" class="btn btn-primary" data-i18n="nav.bookNow">Book Now</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <main id="tourDetailMain">
-
-    <!-- BREADCRUMB -->
-    <div class="container">
-      <nav class="breadcrumb-detail" aria-label="Breadcrumb">
-        <a href="tours.html" data-i18n="toursHeader.breadcrumbCurrent">All Tours</a>
-        <span aria-hidden="true">›</span>
-        <span class="breadcrumb-current" id="breadcrumbCurrent">Loading...</span>
-      </nav>
-    </div>
-
-    <!-- TOUR TITLE -->
-    <div class="container">
-      <h1 class="tour-detail-title" id="tourTitle">Loading...</h1>
-    </div>
-
-    <!-- PHOTO GALLERY MOSAIC -->
-    <div class="container">
-      <div class="gallery-mosaic" id="galleryMosaic">
-        <!-- Rendered by tourdetail.js -->
-      </div>
-    </div>
-
-    <!-- MAIN CONTENT: 2 columns -->
-    <div class="container">
-      <div class="tour-detail-layout">
-
-        <!-- LEFT COLUMN -->
-        <div class="tour-detail-left">
-
-          <!-- Badge + Rating -->
-          <div class="tour-meta-header">
-            <span class="tour-tagline-badge" id="tourTagline"></span>
-            <div class="tour-rating-display">
-              <span class="stars">⭐⭐⭐⭐⭐</span>
-              <span class="rating-number" id="tourRating"></span>
-            </div>
-          </div>
-
-          <!-- Subtitle + Description -->
-          <h2 class="tour-subtitle" id="tourSubtitle"></h2>
-          <p class="tour-description" id="tourDescription"></p>
-
-          <!-- ITINERARY -->
-          <div class="itinerary-card">
-            <h3 class="itinerary-title">
-              <span class="itinerary-icon">🗺️</span>
-              Planned Adventure
-            </h3>
-            <div class="itinerary-steps" id="itinerarySteps">
-              <!-- Rendered by tourdetail.js -->
-            </div>
-          </div>
-
-          <!-- PACKING LIST -->
-          <div class="packing-section">
-            <h3 class="section-title-sm">Essential Packing List</h3>
-            <div class="packing-grid" id="packingGrid">
-              <!-- Rendered by tourdetail.js -->
-            </div>
-          </div>
-
-        </div>
-
-        <!-- RIGHT COLUMN — Booking Widget -->
-        <div class="tour-detail-right">
-          <div class="booking-widget" id="bookingWidget">
-
-            <!-- Price -->
-            <div class="booking-price-row">
-              <div>
-                <span class="price-original-sm" id="bookingOriginalPrice"></span>
-                <div class="booking-price-main">
-                  <span class="price-amount" id="bookingPrice"></span>
-                  <span class="price-label">per person</span>
+                <div
+                  class="lang-dropdown"
+                  role="listbox"
+                  aria-label="Select language"
+                >
+                  <button
+                    class="lang-option active"
+                    data-lang="en"
+                    role="option"
+                    aria-selected="true"
+                  >
+                    <span class="lang-option-flag">🇺🇸</span>
+                    <span class="lang-option-name">English</span>
+                    <svg
+                      class="lang-check"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 7L5.5 10.5L12 3.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    class="lang-option"
+                    data-lang="es"
+                    role="option"
+                    aria-selected="false"
+                  >
+                    <span class="lang-option-flag">🇩🇴</span>
+                    <span class="lang-option-name">Español</span>
+                    <svg
+                      class="lang-check"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2 7L5.5 10.5L12 3.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
-              <span class="savings-badge" id="savingsBadge"></span>
-            </div>
+            </li>
 
-            <!-- Select Date -->
-            <div class="booking-field">
-              <label class="booking-label" for="bookingDate">SELECT DATE</label>
-              <div class="booking-input-wrap">
-                <input type="date" id="bookingDate" class="booking-input">
-                <span class="input-icon" aria-hidden="true">📅</span>
-              </div>
-            </div>
-
-            <!-- Guests Counter -->
-            <div class="booking-field">
-              <label class="booking-label">GUESTS</label>
-              <div class="guests-counter">
-                <button class="counter-btn" id="decreaseGuests" aria-label="Decrease guests">−</button>
-                <span id="guestCount">2 Travelers</span>
-                <button class="counter-btn" id="increaseGuests" aria-label="Increase guests">+</button>
-              </div>
-            </div>
-
-            <!-- Price Breakdown -->
-            <div class="price-breakdown" id="priceBreakdown">
-              <div class="breakdown-row">
-                <span id="breakdownLabel">2 Travelers × $89</span>
-                <span id="breakdownTotal">$178</span>
-              </div>
-              <div class="breakdown-row">
-                <span>Service Fee</span>
-                <span>$0</span>
-              </div>
-              <div class="breakdown-row breakdown-total">
-                <span>Total</span>
-                <span id="grandTotal" class="total-amount">$178</span>
-              </div>
-            </div>
-
-            <!-- Reserve Button -->
-            <a href="#" class="btn btn-primary btn-reserve" id="reserveBtn">
-              Reserve Now
-            </a>
-
-            <!-- Cancellation Policy -->
-            <p class="cancellation-note" id="cancellationNote">
-              🟢 Free cancellation up to 24h before
-            </p>
-
-          </div>
-
-          <!-- Certified Operator Badge -->
-          <div class="certified-badge" id="certifiedBadge">
-            <div class="certified-avatar">✓</div>
-            <div>
-              <strong>Certified Operator</strong>
-              <span>Full Insurance & Safety Licenses</span>
-            </div>
-          </div>
-
+            <li>
+              <a
+                href="tours.html"
+                class="btn btn-primary"
+                data-i18n="nav.bookNow"
+                >Book Now</a
+              >
+            </li>
+          </ul>
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
-    </div>
+    </nav>
 
-    <!-- REVIEWS SECTION -->
-    <div class="reviews-section">
+    <main id="tourDetailMain">
+      <!-- BREADCRUMB -->
       <div class="container">
-        <div class="reviews-header">
-          <div class="reviews-title-group">
-            <h3 class="section-title-sm">Guest Memories</h3>
-            <div class="reviews-aggregate">
-              <span class="stars-lg">⭐⭐⭐⭐⭐</span>
-              <span class="aggregate-score" id="aggregateScore"></span>
-              <span class="aggregate-count" id="aggregateCount"></span>
-            </div>
-          </div>
-          <button class="btn btn-ghost btn-sm">Write a Review</button>
-        </div>
+        <nav class="breadcrumb-detail" aria-label="Breadcrumb">
+          <a href="tours.html" data-i18n="toursHeader.breadcrumbCurrent"
+            >All Tours</a
+          >
+          <span aria-hidden="true">›</span>
+          <span class="breadcrumb-current" id="breadcrumbCurrent"
+            >Loading...</span
+          >
+        </nav>
+      </div>
 
-        <div class="reviews-grid" id="reviewsGrid">
+      <!-- TOUR TITLE -->
+      <div class="container">
+        <h1 class="tour-detail-title" id="tourTitle">Loading...</h1>
+      </div>
+
+      <!-- PHOTO GALLERY MOSAIC -->
+      <div class="container">
+        <div class="gallery-mosaic" id="galleryMosaic">
           <!-- Rendered by tourdetail.js -->
         </div>
-
-        <div class="reviews-see-all">
-          <a href="#" class="see-all-link" id="seeAllReviews"></a>
-        </div>
       </div>
-    </div>
 
-  </main>
+      <!-- MAIN CONTENT: 2 columns -->
+      <div class="container">
+        <div class="tour-detail-layout">
+          <!-- LEFT COLUMN -->
+          <div class="tour-detail-left">
+            <!-- Badge + Rating -->
+            <div class="tour-meta-header">
+              <span class="tour-tagline-badge" id="tourTagline"></span>
+              <div class="tour-rating-display">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-number" id="tourRating"></span>
+              </div>
+            </div>
 
-  <!-- LIGHTBOX MODAL -->
-  <div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Photo gallery">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">✕</button>
-    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
-    <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
-    <div class="lightbox-content">
-      <img class="lightbox-img" id="lightboxImg" src="" alt="">
-      <div class="lightbox-counter" id="lightboxCounter">1 / 5</div>
-    </div>
-    <div class="lightbox-thumbnails" id="lightboxThumbnails">
-      <!-- Generated by tourdetail.js -->
-    </div>
-  </div>
+            <!-- Subtitle + Description -->
+            <h2 class="tour-subtitle" id="tourSubtitle"></h2>
+            <p class="tour-description" id="tourDescription"></p>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <defs>
-                <linearGradient id="logoGradFooter" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ff6b35"/>
-                  <stop offset="100%" stop-color="#fe4a49"/>
-                </linearGradient>
-              </defs>
-              <path d="M18 2C12.477 2 8 6.477 8 12c0 7.5 10 22 10 22s10-14.5 10-22c0-5.523-4.477-10-10-10z"
-                    stroke="url(#logoGradFooter)" stroke-width="2.2" fill="none"/>
-              <circle cx="18" cy="12" r="3.5" stroke="url(#logoGradFooter)" stroke-width="2" fill="none"/>
-              <path d="M21 16 Q26 11 24 7 Q20 12 18 15" stroke="url(#logoGradFooter)" stroke-width="1.8"
-                    fill="none" stroke-linecap="round"/>
-            </svg>
-            <span>iTour Punta Cana</span>
-          </a>
-          <p data-i18n="footer.tagline">Your local guide to the best tours, excursions, and adventures in Punta Cana, Dominican Republic.</p>
-          <div class="social-icons" style="margin-top: 20px;">
-            <a href="#" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/>
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="TikTok">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.02-8.01a8.16 8.16 0 0 0 4.78 1.52V5.38a4.85 4.85 0 0 1-1-.69z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="Twitter / X">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
+            <!-- ITINERARY -->
+            <div class="itinerary-card">
+              <h3 class="itinerary-title">
+                <span class="itinerary-icon">🗺️</span>
+                Planned Adventure
+              </h3>
+              <div class="itinerary-steps" id="itinerarySteps">
+                <!-- Rendered by tourdetail.js -->
+              </div>
+            </div>
+
+            <!-- PACKING LIST -->
+            <div class="packing-section">
+              <h3 class="section-title-sm">Essential Packing List</h3>
+              <div class="packing-grid" id="packingGrid">
+                <!-- Rendered by tourdetail.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN — Booking Widget -->
+          <div class="tour-detail-right">
+            <div class="booking-widget" id="bookingWidget">
+              <!-- Price -->
+              <div class="booking-price-row">
+                <div>
+                  <span
+                    class="price-original-sm"
+                    id="bookingOriginalPrice"
+                  ></span>
+                  <div class="booking-price-main">
+                    <span class="price-amount" id="bookingPrice"></span>
+                    <span class="price-label">per person</span>
+                  </div>
+                </div>
+                <span class="savings-badge" id="savingsBadge"></span>
+              </div>
+
+              <!-- Select Date -->
+              <div class="booking-field">
+                <label class="booking-label" for="bookingDate"
+                  >SELECT DATE</label
+                >
+                <div class="booking-input-wrap">
+                  <input type="date" id="bookingDate" class="booking-input" />
+                  <span class="input-icon" aria-hidden="true">📅</span>
+                </div>
+              </div>
+
+              <!-- Guests Counter -->
+              <div class="booking-field">
+                <label class="booking-label">GUESTS</label>
+                <div class="guests-counter">
+                  <button
+                    class="counter-btn"
+                    id="decreaseGuests"
+                    aria-label="Decrease guests"
+                  >
+                    −
+                  </button>
+                  <span id="guestCount">2 Travelers</span>
+                  <button
+                    class="counter-btn"
+                    id="increaseGuests"
+                    aria-label="Increase guests"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <!-- Price Breakdown -->
+              <div class="price-breakdown" id="priceBreakdown">
+                <div class="breakdown-row">
+                  <span id="breakdownLabel">2 Travelers × $89</span>
+                  <span id="breakdownTotal">$178</span>
+                </div>
+                <div class="breakdown-row">
+                  <span>Service Fee</span>
+                  <span>$0</span>
+                </div>
+                <div class="breakdown-row breakdown-total">
+                  <span>Total</span>
+                  <span id="grandTotal" class="total-amount">$178</span>
+                </div>
+              </div>
+
+              <!-- Reserve Button -->
+              <a href="#" class="btn btn-primary btn-reserve" id="reserveBtn">
+                Reserve Now
+              </a>
+
+              <!-- Cancellation Policy -->
+              <p class="cancellation-note" id="cancellationNote">
+                🟢 Free cancellation up to 24h before
+              </p>
+            </div>
+
+            <!-- Certified Operator Badge -->
+            <div class="certified-badge" id="certifiedBadge">
+              <div class="certified-avatar">✓</div>
+              <div>
+                <strong>Certified Operator</strong>
+                <span>Full Insurance & Safety Licenses</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.discoverTitle">Discover</h4>
-          <a href="tours.html" data-i18n="footer.link_tours">Tours</a>
-          <a href="index.html#about" data-i18n="footer.link_about">About Us</a>
-          <a href="tours.html" data-i18n="footer.link_sitemap">Sitemap</a>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.supportTitle">Support</h4>
-          <a href="#" data-i18n="footer.link_privacy">Privacy Policy</a>
-          <a href="#" data-i18n="footer.link_terms">Terms of Service</a>
-          <a href="#" data-i18n="footer.link_contact">Contact Us</a>
+      </div>
+
+      <!-- REVIEWS SECTION -->
+      <div class="reviews-section">
+        <div class="container">
+          <div class="reviews-header">
+            <div class="reviews-title-group">
+              <h3 class="section-title-sm">Guest Memories</h3>
+              <div class="reviews-aggregate">
+                <span class="stars-lg">⭐⭐⭐⭐⭐</span>
+                <span class="aggregate-score" id="aggregateScore"></span>
+              </div>
+            </div>
+            <button class="btn btn-ghost btn-sm">Write a Review</button>
+          </div>
+
+          <div class="reviews-grid" id="reviewsGrid">
+            <!-- Rendered by tourdetail.js -->
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p data-i18n="footer.copyright">© 2025 iTour Punta Cana. All rights reserved.</p>
-        <p data-i18n="footer.madeWith">Made with ♥ in Punta Cana, Dominican Republic</p>
+    </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div
+      class="lightbox-overlay"
+      id="lightboxOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Photo gallery"
+    >
+      <button
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Close gallery"
+      >
+        ✕
+      </button>
+      <button
+        class="lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Previous photo"
+      >
+        ‹
+      </button>
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">
+        ›
+      </button>
+      <div class="lightbox-content">
+        <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+        <div class="lightbox-counter" id="lightboxCounter">1 / 5</div>
+      </div>
+      <div class="lightbox-thumbnails" id="lightboxThumbnails">
+        <!-- Generated by tourdetail.js -->
       </div>
     </div>
-  </footer>
 
-  <script src="scripts/i18n.js"></script>
-  <script src="scripts/main.js"></script>
-  <script src="scripts/tourspage.js"></script>
-  <script src="scripts/tourdetail.js"></script>
-</body>
+    <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <svg
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <defs>
+                  <linearGradient
+                    id="logoGradFooter"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#ff6b35" />
+                    <stop offset="100%" stop-color="#fe4a49" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M18 2C12.477 2 8 6.477 8 12c0 7.5 10 22 10 22s10-14.5 10-22c0-5.523-4.477-10-10-10z"
+                  stroke="url(#logoGradFooter)"
+                  stroke-width="2.2"
+                  fill="none"
+                />
+                <circle
+                  cx="18"
+                  cy="12"
+                  r="3.5"
+                  stroke="url(#logoGradFooter)"
+                  stroke-width="2"
+                  fill="none"
+                />
+                <path
+                  d="M21 16 Q26 11 24 7 Q20 12 18 15"
+                  stroke="url(#logoGradFooter)"
+                  stroke-width="1.8"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <span>iTour Punta Cana</span>
+            </a>
+            <p data-i18n="footer.tagline">
+              Your local guide to the best tours, excursions, and adventures in
+              Punta Cana, Dominican Republic.
+            </p>
+            <div class="social-icons" style="margin-top: 20px">
+              <a href="#" aria-label="Instagram">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="5" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="TikTok">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.02-8.01a8.16 8.16 0 0 0 4.78 1.52V5.38a4.85 4.85 0 0 1-1-.69z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter / X">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footer.discoverTitle">Discover</h4>
+            <a href="tours.html" data-i18n="footer.link_tours">Tours</a>
+            <a href="index.html#about" data-i18n="footer.link_about"
+              >About Us</a
+            >
+            <a href="tours.html" data-i18n="footer.link_sitemap">Sitemap</a>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footer.supportTitle">Support</h4>
+            <a href="#" data-i18n="footer.link_privacy">Privacy Policy</a>
+            <a href="#" data-i18n="footer.link_terms">Terms of Service</a>
+            <a href="#" data-i18n="footer.link_contact">Contact Us</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p data-i18n="footer.copyright">
+            © 2025 iTour Punta Cana. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/i18n.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/tourspage.js"></script>
+    <script src="scripts/tourdetail.js"></script>
+  </body>
 </html>
